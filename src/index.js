@@ -17,11 +17,10 @@ class NewCont {
   constructor() {
     this.name = '';
     this.page = 1;
-
   }
+  
   fetchCont() {
-    const url = `https://pixabay.com/api/?key=29818615-eeef91044a0285c2bbb309d67
-      &q=${this.name}&image_type=photo&orientation=horizontal&safesearch=true&page=${this.page}&per_page=40`;
+    const url = `https://pixabay.com/api/?key=29818615-eeef91044a0285c2bbb309d67&q=${this.name}&image_type=photo&orientation=horizontal&safesearch=true&page=${this.page}&per_page=40`;
     return fetch(url).then(response => response.json())
       .then(data => {
         this.incrementPage();
@@ -46,7 +45,7 @@ const newCont = new NewCont();
 
 function searchPicture(evt) {
   evt.preventDefault();
-  newCont.query = evt.target.value;
+  newCont.query = evt.currentTarget.searchQuery.value;
   newCont.resetPage();
   newCont.fetchCont().then(outputPictures);
 }
