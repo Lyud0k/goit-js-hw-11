@@ -90,7 +90,7 @@ function searchMore() {
 }
 
 async function outputPictures(pictures) {
-  // const data = await newCont.getCont();
+  const data = await newCont.getCont();
   const allPictures = data.hits;
   const amountPictures = data.totalHits;
   findClick.disabled = false;
