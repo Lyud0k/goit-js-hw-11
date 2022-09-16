@@ -91,8 +91,8 @@ function searchMore() {
 
 async function outputPictures(pictures) {
   const data = await newCont.getCont();
-  const allPictures = data.hits;
-  const amountPictures = data.totalHits;
+  const allPictures = data.data.hits;
+  const amountPictures = data.data.totalHits;
   findClick.disabled = false;
   if (pictures.length === 0) {
        Notify.failure(
